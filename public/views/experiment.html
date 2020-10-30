@@ -273,7 +273,6 @@ for (var i = 0; i < n_videos_participant * n_repeat / n_videos_per_block; i++) {
     // iterate over videos per block
     for (var j = 0; j < n_videos_per_block; j++) {
         timeline.push(continue_block);
-        timeline.push(image_block);  // page with an image asking to press the key
         timeline.push(video_stimuli[i * n_videos_per_block + j]);  // page with the stimulus
     }
     // questionnaire
