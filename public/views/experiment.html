@@ -173,6 +173,7 @@ if (random_num == 1) {
 }
 random_num = getRandomInt(1, 2);
 if (random_num == 1) {
+   video_ids_blocks.push(video_ids_3); 
    video_ids_blocks.push(video_ids_4); 
 } else {
    video_ids_blocks.push(video_ids_4);
@@ -182,7 +183,7 @@ if (random_num == 1) {
 video_ids = video_ids_blocks[0].concat(video_ids_blocks[1], video_ids_blocks[2], video_ids_blocks[3]);
 
 // build array with videos with stimuli
-for (var i = 0; i < n_videos_participant; i++) {
+for (var i = 0; i <= n_videos_participant; i++) {
     video_stimuli.push({
         type: 'video-keyboard-multiple-responses-release',
         autoplay: true,
