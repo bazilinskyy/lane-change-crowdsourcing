@@ -201,7 +201,7 @@ for (var i = 0; i < n_videos_participant; i++) {
         controls: false,
         width: 1280,
         height: 720,
-        choices: ['F', 'S'],
+        choices: ['A', 'D'],
         sources: [video_pfefix + video_ids[i] + '.mp4'],
         prompt: '<p>Press and HOLD \'F\' when you feel safe to cross.</p>',
         on_finish: function(data) {
@@ -218,7 +218,7 @@ var continue_block = {
     choices: ['C']
 };
 // build between blocks
-for (var i = 1; i <= n_videos * n_repeat / n_videos_per_block - 1; i++) {
+for (var i = 1; i <= n_videos_participant * n_repeat / n_videos_per_block - 1; i++) {
     var videos_done = n_videos_per_block * i;
     between_blocks.push({
         type: 'html-keyboard-response',
