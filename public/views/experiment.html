@@ -41,6 +41,7 @@ var n_videos = 120; // number of videos
 var n_repeat = 1; // number of repeats of each condition
 var n_videos_per_block = 5; // number of videos in each block
 var n_break = 5; // number of videos between each break
+var image_pfefix = 'img/'; // prefix for images
 var video_pfefix = 'videos/video_'; // prefix for videos
 
  /**
@@ -63,7 +64,7 @@ function getFinishCode() {
     var timestamp = window.performance.timing.navigationStart + window.performance.now();
     var current_time = Math.round(timestamp);
     var random_num = getRandomInt(1, 10000);
-    finish_code = 'E2' + current_time + 'RE' + random_num + '3Z';
+    finish_code = 'E9' + current_time + 'BV' + random_num + '7K';
     return finish_code;
 }
 
@@ -229,7 +230,7 @@ for (var i = 0; i < n_videos * n_repeat / n_videos_per_block; i++) {
 jsPsych.init({
     // auto_preload: false,
     show_preload_progress_bar: true,
-    preload_images: condition_images.concat([image_pfefix + 'black_frame.png']),
+    preload_images: [image_pfefix + 'black_frame.png'],
     timeline: timeline,
     max_load_time: 3000000,
     on_finish: function() {
