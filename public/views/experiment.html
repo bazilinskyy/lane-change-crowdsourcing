@@ -239,10 +239,13 @@ var scale_likert = [
 /* randomise list and pick the first 40 */
 var likert_block = {
     type: 'survey-likert',
-    // timeline: test_stimuli_1,
+    preamble: "<p>Please responde to the questions below based on the last 5 videos that you saw.</p>";
     questions: [
-      {prompt: "question 1?", labels: scale_likert, required: true},
-      {prompt: "question 2?", labels: scale_likert, required: true}
+      {prompt: "The vehicle’s driving behavior is efficient.", labels: scale_likert, required: true},
+      {prompt: "The vehicle’s driving behavior is safe.", labels: scale_likert, required: true},
+      {prompt: "The vehicle’s driving behavior is human-like.", labels: scale_likert, required: true},
+      {prompt: "The vehicle’s driving behavior is reliable.", labels: scale_likert, required: true},
+      {prompt: "I would use this automated driving system.", labels: scale_likert, required: true}
     ]
 };
 
