@@ -43,6 +43,7 @@ var n_videos_per_block = 5; // number of videos in each block
 var n_break = 5; // number of videos between each break
 var image_pfefix = 'img/'; // prefix for images
 var video_pfefix = 'videos/video_'; // prefix for videos
+var SHOW_DEBUG = false; // switch for debugging output
 
  /**
  * Returns a random integer between min (inclusive) and max (inclusive).
@@ -87,6 +88,31 @@ function shuffle(a) {
 
 function onlyUnique(value, index, self) { 
     return self.indexOf(value) === index;
+}
+
+/**
+ * Get parameter from URL.
+ */
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+var debug = getUrlParameter('debug');
+if (!debug) {
+    debug = SHOW_DEBUG;
+}
+
+if (debug) {
+    console.log('debug', debug);
 }
 
 // Arrays for storing data
@@ -145,7 +171,6 @@ if (random_num == 1) {
 }
 random_num = getRandomInt(1, 2);
 if (random_num == 1) {
-   video_ids_blocks.push(video_ids_3);
    video_ids_blocks.push(video_ids_4); 
 } else {
    video_ids_blocks.push(video_ids_4);
@@ -254,6 +279,14 @@ for (var i = 0; i < n_videos * n_repeat / n_videos_per_block; i++) {
         timeline.push(between_blocks[i]);
     }
 }
+
+if (debug) {
+    console.log('timeline', timeline);
+    console.log('video_stimuli', video_stimuli);
+    console.log('likert_block', likert_block);
+    console.log('between_blocks', between_blocks);
+}
+
 /* Start the experiment */
 jsPsych.init({
     // auto_preload: false,
