@@ -188,10 +188,6 @@ if (random_num == 1) {
 }
 
 video_ids = video_ids_blocks[0].concat(video_ids_blocks[1], video_ids_blocks[2], video_ids_blocks[3]);
-console.log('video_ids_blocks[0]', video_ids_blocks[0]);
-console.log('video_ids_blocks[1]', video_ids_blocks[1]);
-console.log('video_ids_blocks[2]', video_ids_blocks[2]);
-console.log('video_ids_blocks[3]', video_ids_blocks[3]);
 
 // build array with videos with stimuli
 for (var i = 0; i < n_videos_participant; i++) {
@@ -290,6 +286,10 @@ for (var i = 0; i < n_videos_participant * n_repeat / n_videos_per_block; i++) {
 
 if (debug) {
     console.log('timeline', timeline);
+    console.log('video_ids_blocks[0]', video_ids_blocks[0]);
+    console.log('video_ids_blocks[1]', video_ids_blocks[1]);
+    console.log('video_ids_blocks[2]', video_ids_blocks[2]);
+    console.log('video_ids_blocks[3]', video_ids_blocks[3]);
     console.log('video_ids', video_ids);
     console.log('video_stimuli', video_stimuli);
     console.log('likert_block', likert_block);
