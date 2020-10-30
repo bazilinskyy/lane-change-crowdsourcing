@@ -203,7 +203,7 @@ for (var i = 0; i < n_videos_participant; i++) {
         height: 720,
         choices: ['A', 'D'],
         sources: [video_pfefix + video_ids[i] + '.mp4'],
-        prompt: '<p>Press and HOLD \'F\' when you feel safe to cross.</p>',
+        prompt: '<p>When you think that the car needs to go left, press key \'A\'. When you think that the car needs to go right, press key \'D\'.</p>',
         on_finish: function(data) {
             jsPsych.data.addDataToLastTrial({
                 worker_code: finish_code
