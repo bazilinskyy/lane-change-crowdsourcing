@@ -164,10 +164,10 @@ video_nn_mist_ids = shuffle(video_nn_mist_ids);
 
 // shuffle array with video IDs
 var video_ids_blocks = [];  // all groups shuffled
-var video_ids_1 = video_mobil_sunset_ids.slice(0, n_videos_per_block * n_repeat) ;  // group 1
-var video_ids_2 = video_mobil_mist_ids.slice(0, n_videos_per_block * n_repeat) ;  // group 2
-var video_ids_3 = video_nn_sunset_ids.slice(0, n_videos_per_block * n_repeat) ;  // group 3
-var video_ids_4 = video_nn_mist_ids.slice(0, n_videos_per_block * n_repeat) ;  // group 4
+var video_ids_1 = video_mobil_sunset_ids.slice(0, n_videos_participant / 4) ;  // group 1
+var video_ids_2 = video_mobil_mist_ids.slice(0, n_videos_participant / 4) ;  // group 2
+var video_ids_3 = video_nn_sunset_ids.slice(0, n_videos_participant / 4) ;  // group 3
+var video_ids_4 = video_nn_mist_ids.slice(0, n_videos_participant / 4) ;  // group 4
 
 // randomse order of sunset-mist
 random_num = getRandomInt(1, 2);
